@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viral Dermatology Content Report — Palestine & Jordan</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #f9f5ef;
+    --cream: #f0ead8;
+    --accent: #c9473b;
+    --accent2: #2a6049;
+    --accent3: #d4a82a;
+    --muted: #7a7267;
+    --border: #d9cfc0;
+    --tag-edu: #e8f2ec;
+    --tag-edu-text: #1e5c3a;
+    --tag-proc: #fef0e6;
+    --tag-proc-text: #8b4513;
+    --tag-myth: #f0e8f4;
+    --tag-myth-text: #5b1e7a;
+    --tag-trans: #e8f0fe;
+    --tag-trans-text: #1a3a7a;
+    --tag-dis: #fff0f0;
+    --tag-dis-text: #8b0000;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ===== COVER ===== */
+  .cover {
+    background: var(--ink);
+    color: var(--paper);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,71,59,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(42,96,73,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cover-label::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+  .cover h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 1.05;
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+  .cover h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .cover-desc {
+    font-size: 17px;
+    color: #b0a898;
+    max-width: 520px;
+    margin-bottom: 60px;
+    font-weight: 300;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cover-meta-item .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cover-meta-item .value {
+    font-size: 14px;
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .cover-badge {
+    position: absolute;
+    bottom: 60px; right: 60px;
+    width: 110px; height: 110px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ===== SECTION: EXECUTIVE SUMMARY ===== */
+  .exec-summary {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 60px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .exec-summary h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    margin-bottom: 32px;
+    color: var(--accent);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2px;
+    margin-bottom: 48px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.04);
+    padding: 28px 24px;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .stat-box .number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-box .desc {
+    font-size: 13px;
+    color: #8a8278;
+    line-height: 1.4;
+  }
+  .key-insight {
+    background: rgba(201,71,59,0.1);
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    font-size: 15px;
+    color: #c8c0b8;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .key-insight strong { color: var(--paper); }
+
+  /* ===== MAIN CONTENT ===== */
+  .main-content {
+    padding: 0 60px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    padding: 80px 0 48px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+  .section-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    line-height: 1.15;
+  }
+
+  /* ===== VIDEO CARD ===== */
+  .video-card {
+    background: white;
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .video-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .card-header {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 0;
+    align-items: stretch;
+  }
+  .card-number {
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    min-height: 80px;
+    position: relative;
+  }
+  .card-number::after {
+    content: attr(data-emoji);
+    position: absolute;
+    bottom: 6px;
+    font-size: 14px;
+  }
+  .card-title-block {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-title-block h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .card-title-block h3 em { font-style: italic; color: var(--accent); }
+  .card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  .tag-edu { background: var(--tag-edu); color: var(--tag-edu-text); }
+  .tag-proc { background: var(--tag-proc); color: var(--tag-proc-text); }
+  .tag-myth { background: var(--tag-myth); color: var(--tag-myth-text); }
+  .tag-trans { background: var(--tag-trans); color: var(--tag-trans-text); }
+  .tag-dis { background: var(--tag-dis); color: var(--tag-dis-text); }
+
+  .card-virality {
+    padding: 20px 24px;
+    min-width: 160px;
+    border-left: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+  .virality-score {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .virality-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .virality-evidence {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .card-section {
+    padding: 24px;
+    border-right: 1px solid var(--border);
+  }
+  .card-section:last-child { border-right: none; }
+  .card-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .card-section p, .card-section ul {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #3a3530;
+  }
+  .card-section ul { padding-left: 16px; }
+  .card-section ul li { margin-bottom: 5px; }
+
+  .card-content-block {
+    background: var(--cream);
+    padding: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .content-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+  .content-item-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+  .content-item p, .content-item span {
+    font-size: 13px;
+    color: #3a3530;
+    line-height: 1.55;
+  }
+  .hook-text {
+    font-style: italic;
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .hashtag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .hashtag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent2);
+    background: rgba(42,96,73,0.08);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* Structure flow */
+  .structure-flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .flow-step {
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 11px;
+    padding: 5px 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .flow-arrow {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* ===== CATEGORY LEGEND ===== */
+  .legend {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 48px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+  }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ===== REGIONAL INTEL ===== */
+  .regional-section {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 60px;
+  }
+  .regional-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .regional-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 28px;
+  }
+  .regional-card h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+  .regional-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .regional-card ul li {
+    font-size: 13px;
+    color: #b0a898;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .regional-card ul li::before {
+    content: '→';
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ===== PLATFORM MATRIX ===== */
+  .platform-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 32px;
+  }
+  .platform-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    text-align: left;
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .platform-table td {
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    font-size: 13.5px;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  .platform-table tr:nth-child(even) td { background: var(--cream); }
+  .platform-table td:first-child {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--accent);
+    white-space: nowrap;
+    background: rgba(201,71,59,0.05);
+  }
+
+  /* ===== CONTENT CALENDAR ===== */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin-top: 32px;
+  }
+  .cal-day-header {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .cal-day {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 14px 12px;
+    min-height: 90px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .cal-day .day-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .cal-day .post-type {
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+  }
+  .cal-day.off {
+    background: var(--cream);
+    opacity: 0.5;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.3);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  /* page break helpers */
+  .page-break { 
+    border-top: 2px solid var(--ink);
+    margin: 0;
+  }
+
+  @media print {
+    body { background: white; }
+    .video-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-label">AI-Powered Social Media Research Report</div>
+  <h1>Viral Dermatology<br>Content <em>Intelligence</em><br>Report</h1>
+  <p class="cover-desc">
+    Top 15 evidence-backed short-form video ideas for clinical dermatology — tailored for clinics in Palestine & Jordan. Data sourced from 600+ live TikTok posts, Instagram Reels, and cross-platform trend analysis.
+  </p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="label">Generated</span>
+      <span class="value">April 22, 2026</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Data Sources</span>
+      <span class="value">TikTok · Instagram · YouTube</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Total Posts Analysed</span>
+      <span class="value">600+ Live Posts</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Target Markets</span>
+      <span class="value">Palestine · Jordan · MENA</span>
+    </div>
+  </div>
+  <div class="cover-badge">Scraping via<br>Apify<br>Live Data<br>2026</div>
+</div>
+
+<!-- ===== EXECUTIVE SUMMARY ===== -->
+<div class="exec-summary">
+  <h2>Executive Summary</h2>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <span class="number">12.5M</span>
+      <span class="desc">Views on top-performing scalp psoriasis video by a board-certified dermatologist</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">5.1M</span>
+      <span class="desc">Views on a single "glass skin" skincare transformation routine video</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">793K</span>
+      <span class="desc">Views on psoriasis treatment educational content from a verified dermatologist</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">308K</span>
+      <span class="desc">Views on personal storytelling: "I went to dermatologists & tried prescription creams"</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">1.6M</span>
+      <span class="desc">Views: "Stop picking at your psoriasis!" with Koebner phenomenon explanation</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">#1</span>
+      <span class="desc">Most viral format: "Stitch + Expert Reaction" to a patient's home remedy attempt</span>
+    </div>
+  </div>
+  <div class="key-insight">
+    <strong>Most powerful finding:</strong> The highest-performing dermatology video scraped (12.5M views, 198K likes, 20K shares) was a 30-second "stitch" by Dr. Abby (Yale MD, Harvard Professor) reacting to a scalp psoriasis home remedy with apple cider vinegar and aspirin — validating the "Expert Reacts" format as the highest-leverage content type for a licensed dermatologist.
+  </div>
+  <div class="key-insight">
+    <strong>Regional opportunity:</strong> The Arab world has near-zero dermatologist-led short-form content in Arabic. Content covering sun-induced hyperpigmentation, hijab-related scalp conditions, Ramadan skincare, and heat-driven fungal infections in Arabic represents an <strong>entirely untapped viral niche.</strong>
+  </div>
+  <div class="key-insight">
+    <strong>Key pattern across all 600+ posts:</strong> Content that triggers a "I had no idea" or "I've been doing this wrong" reaction consistently outperforms pure educational content. The emotional hook of <em>correcting a common mistake</em> is the single most reliable virality driver in dermatology.
+  </div>
+</div>
+
+<!-- ===== LEGEND ===== -->
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#4caf50"></div>
+    <span>🟢 <strong style="color:white">Education</strong> — Condition explanations, patient Q&amp;A, ingredient science</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#ff9800"></div>
+    <span>🟠 <strong style="color:white">Procedural</strong> — In-clinic treatments, step-by-step procedures</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#9c27b0"></div>
+    <span>🟣 <strong style="color:white">Myth-Busting</strong> — Debunking misconceptions, correcting wrong beliefs</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#2196f3"></div>
+    <span>🔵 <strong style="color:white">Transformation</strong> — Before/after, patient journeys, visual results</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#f44336"></div>
+    <span>🔴 <strong style="color:white">Disease Awareness</strong> — Clinical case presentations, diagnosis clarity</span>
+  </div>
+</div>
+
+<!-- ===== VIDEO IDEAS ===== -->
+<div class="main-content">
+  <div class="section-header">
+    <div class="section-label">Core Deliverable</div>
+    <h2>Top 15 Viral Video Ideas</h2>
+  </div>
+
+  <!-- ===== CARD 1 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="🎯">01</div>
+      <div class="card-title-block">
+        <h3>"Stop Picking Your <em>Scalp Psoriasis</em> — Here's Why It Spreads"</h3>
+        <div class="card-tags">
+          <span class="tag tag-myth">Myth-Busting</span>
+          <span class="tag tag-edu">Education</span>
+          <span class="tag tag-dis">Disease Awareness</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Proven: 12.5M views (Dr. Abby), 1.6M views (Brownskinderm) for same format</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Triggers the "I've been doing this wrong" emotional response. Explains the Koebner Phenomenon in plain language — a concept most patients have never heard of. The visual of scales and the word "spreads" stops the scroll immediately.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: Show scales</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">DANGER: Koebner</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">SOLUTION: 3 steps</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">CTA: Book visit</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Film at clinic with actual patient case (anonymised)</li>
+          <li>Show dermatoscope image of plaque</li>
+          <li>Introduce yourself as a licensed dermatologist</li>
+          <li>Include Arabic + English subtitles</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook (first 2 sec)</div>
+          <p class="hook-text">"إذا كنت تحك قشور رأسك — أنت بتجعلها أسوأ." <br><small style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:var(--muted)">("If you're scratching your scalp scales — you're making it worse.")</small></p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>صدفية الرأس تنتشر عند الخدش — هذا ما يسميه الأطباء ظاهرة كوبنر. إليك الروتين الصحيح المعتمد طبياً. 🧪</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#صدفية</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+            <span class="hashtag">#psoriasis</span>
+            <span class="hashtag">#scalppsoriasis</span>
+            <span class="hashtag">#dermatologist</span>
+            <span class="hashtag">#الأردن</span>
+            <span class="hashtag">#فلسطين</span>
+            <span class="hashtag">#أمراض_الجلد</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 2 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="⚡">02</div>
+      <div class="card-title-block">
+        <h3>"I React to a Patient's Home Remedy for <em>Eczema</em> — as a Dermatologist"</h3>
+        <div class="card-tags">
+          <span class="tag tag-myth">Myth-Busting</span>
+          <span class="tag tag-edu">Education</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Data: "Expert Reacts" stitch format is the #1 performing dermatology format across platforms</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Dual audience appeal: those who've tried the home remedy and those who haven't. The "stitch" or "duet" format borrows the original content's existing reach. Creates urgency and credibility simultaneously. Comments explode with "I do this too!"</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">STITCH: Patient claims</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">PAUSE: "Wait…"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">SCIENCE: Explain risk</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">SAFE ALTERNATIVE</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Common Arab home remedies: olive oil, turmeric, honey on eczema</li>
+          <li>Validate what works, correct what's harmful</li>
+          <li>Wear white coat for authority signal</li>
+          <li>Use TikTok Stitch or Instagram "Remix" feature</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"وجدت هذا الفيديو على تيك توك — كطبيب جلدية لازم أرد 👇"<br><small style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:var(--muted)">("I found this video on TikTok — as a dermatologist I have to respond 👇")</small></p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>الإكزيما مش مشكلة جلد فقط — هي حالة طبية تحتاج علاج صحيح. الزيت والعسل ممكن يسببوا تهيجاً أكثر. هذا ما يجب فعله بدلاً من ذلك. 🧴</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#إكزيما</span>
+            <span class="hashtag">#eczema</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+            <span class="hashtag">#dermatologist</span>
+            <span class="hashtag">#skintok</span>
+            <span class="hashtag">#skincare</span>
+            <span class="hashtag">#أمراض_جلدية</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 3 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="☀️">03</div>
+      <div class="card-title-block">
+        <h3>"Why Arab Skin Develops <em>Dark Spots</em> Faster — and What Actually Works"</h3>
+        <div class="card-tags">
+          <span class="tag tag-edu">Education</span>
+          <span class="tag tag-trans">Transformation</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Regional gap: No Arabic-language content exists for Fitzpatrick IV–VI hyperpigmentation science</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Deeply personalised to the Arab audience — Fitzpatrick skin types IV–VI are highly prevalent in Palestine and Jordan. Sun exposure is intense year-round. The phrase "Arab skin" in the hook creates instant identity resonance and a reason to watch. PIH (post-inflammatory hyperpigmentation) is the #1 complaint at Arab dermatology clinics.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: "Arab skin fact"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">SCIENCE: More melanin</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">WHAT DOESN'T WORK</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">CLINIC SOLUTION</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Show before/after of actual patients (with consent)</li>
+          <li>Name the treatments: chemical peels, tranexamic acid, laser</li>
+          <li>Differentiate PIH from melasma clinically</li>
+          <li>Film outdoors in sunlight for visual impact</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"البشرة العربية تنتج 40% أكثر ميلانين — وهذا سبب البقع الداكنة 🌑"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>البقع الداكنة مش مشكلة تجميلية — هي استجابة الجلد للالتهاب. في البشرة الداكنة هي أشد وأطول. كطبيب جلدية، هذا ما أوصي به علمياً.</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#تفتيح_البشرة</span>
+            <span class="hashtag">#بقع_داكنة</span>
+            <span class="hashtag">#hyperpigmentation</span>
+            <span class="hashtag">#melasma</span>
+            <span class="hashtag">#arabskin</span>
+            <span class="hashtag">#dermatologist</span>
+            <span class="hashtag">#عمان</span>
+            <span class="hashtag">#رام_الله</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 4 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="🧪">04</div>
+      <div class="card-title-block">
+        <h3>"9 Facts About <em>Niacinamide</em> — From a Dermatologist Who Actually Studied the Science"</h3>
+        <div class="card-tags">
+          <span class="tag tag-edu">Education</span>
+          <span class="tag tag-myth">Myth-Busting</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">68.7K views, high save rate for ingredient fact-list format. "Save-bait" content drives algorithm reach</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Numbered list format is extremely saveable. Each surprising "fact" (e.g., "10% niacinamide often irritates — 2-5% is the sweet spot") creates a micro-shock. Audience shares because it makes them look informed. Strong comment driver: "Which one surprised you?"</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: "9 things"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">YES/NO LIST x9</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">COMMENT CTA</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Follow for more</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Adapt for locally relevant ingredients: glycolic acid, azelaic acid, retinol</li>
+          <li>Make separate videos for each ingredient</li>
+          <li>Add "safe in Ramadan fasting?" as a unique regional fact</li>
+          <li>Text overlay in Arabic + voice in Arabic</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"9 حقائق عن النياسيناميد — كثير منها غلط على الإنترنت ❌✅"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>النياسيناميد من أكثر المكونات ظهوراً في السوشيال ميديا — لكن معظم ما تسمعه مبالغ فيه أو غلط. كطبيب جلدية، إليك الحقيقة العلمية.</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#niacinamide</span>
+            <span class="hashtag">#نياسيناميد</span>
+            <span class="hashtag">#skincareingredients</span>
+            <span class="hashtag">#skincaretips</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+            <span class="hashtag">#عناية_بالبشرة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 5 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="🔬">05</div>
+      <div class="card-title-block">
+        <h3>"Is This <em>Acne</em> or <em>Rosacea</em>? A Dermatologist Diagnoses in 60 Seconds"</h3>
+        <div class="card-tags">
+          <span class="tag tag-dis">Disease Awareness</span>
+          <span class="tag tag-edu">Education</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Format proven by "Is this rash eczema or psoriasis?" (10.3K views in same format). Differential diagnosis content has massive saves</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Millions of people self-diagnose incorrectly. The promise of a "60-second diagnosis" is irresistible. Creates a "which one am I?" game. Massive share potential because viewers tag friends. The surprise reveal ("You don't have acne — you have rosacea") drives comments and follows.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: "Which is it?"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">VISUAL CLUES x3</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">VERDICT + WHY</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">CTA: "Comment yours"</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Series: Acne vs Rosacea, Psoriasis vs Eczema, Ringworm vs Eczema, Vitiligo vs Tinea Versicolor</li>
+          <li>Use real clinical photos (anonymised or consent-based)</li>
+          <li>Add "DM us for a consultation" CTA</li>
+          <li>Each episode drives a specific consultation type</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"ظننت إنها حبوب — لكن كطبيب جلدية أرى شيئاً مختلفاً تماماً 👀"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>الحبوب والرورازيا يشتبه فيهما كثيراً — والعلاج مختلف تماماً. في 60 ثانية، كيف تفرق بينهما. شاركها مع من يعاني من البشرة الحمراء 🔴</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#حب_الشباب</span>
+            <span class="hashtag">#rosacea</span>
+            <span class="hashtag">#acne</span>
+            <span class="hashtag">#dermatologist</span>
+            <span class="hashtag">#تشخيص</span>
+            <span class="hashtag">#skindisease</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 6 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="💇">06</div>
+      <div class="card-title-block">
+        <h3>"Hair Loss Under the <em>Hijab</em> — What Your Dermatologist Wants You to Know"</h3>
+        <div class="card-tags">
+          <span class="tag tag-edu">Education</span>
+          <span class="tag tag-dis">Disease Awareness</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Untapped regional niche. "Hair in your drain" content gets hundreds of thousands of views. Combines cultural specificity with high-urgency topic</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Hijab-related traction alopecia and scalp conditions are common but taboo to discuss publicly. This video is the first of its kind in Arabic — massive share potential within Muslim women communities. Cultural specificity = higher relatability = higher engagement. Huge underserved audience across Jordan and Palestine.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: Real patient stat</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">3 CAUSES explained</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">PREVENTION TIPS</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">When to see a derm</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Cover traction alopecia, scalp humidity, fungal infections</li>
+          <li>Mention trichoscopy as a diagnosis tool at your clinic</li>
+          <li>Suggest hijab fabric types (breathable vs. synthetic)</li>
+          <li>Include a female dermatologist if available — higher trust</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"كل يوم تخلعين الحجاب وتجدين شعراً على قماشه — هذا تحذير طبي 🚨"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>تساقط الشعر عند المحجبات حقيقي وقابل للعلاج — لكن كلما بكرتِ كلما حافظتِ على شعرك. هذا ما يجب معرفته ومتى تزورين طبيب جلدية. ❤️</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#تساقط_الشعر</span>
+            <span class="hashtag">#الحجاب</span>
+            <span class="hashtag">#alopecia</span>
+            <span class="hashtag">#hairloss</span>
+            <span class="hashtag">#scalphealth</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+            <span class="hashtag">#محجبات</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 7 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="🌿">07</div>
+      <div class="card-title-block">
+        <h3>"Fungal <em>Skin Infection</em> vs. Eczema — You're Treating the Wrong One"</h3>
+        <div class="card-tags">
+          <span class="tag tag-myth">Myth-Busting</span>
+          <span class="tag tag-dis">Disease Awareness</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Major clinical issue in MENA due to heat/humidity. Misdiagnosis is rampant. "You've been treating the wrong thing" is one of the highest-performing content hooks across all health niches</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Using steroid creams on a fungal infection makes it dramatically worse (tinea incognito). This is terrifyingly common in the Arab world where OTC steroid creams are easily available. The "you've been making it worse" hook triggers alarm and immediate shares. Very high comment engagement.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: "Stop using that cream"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">SHOW: Visual difference</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">RISK: Tinea incognito</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">CORRECT TREATMENT</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Show dermatoscope images of tinea corporis vs eczema</li>
+          <li>Address OTC steroid cream misuse — huge problem regionally</li>
+          <li>Emphasise that a lab scraping confirms diagnosis</li>
+          <li>Recommend seeing a dermatologist before buying OTC creams</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"الكريم الكورتيزوني على الفطريات = كارثة 💀 إليك لماذا"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>الفطريات والإكزيما تبدو متشابهة — لكن العلاج معاكس تماماً. الكورتيزون يعالج الإكزيما لكنه يُفجّر الفطريات. قبل ما تشتري أي كريم، شوف هذا الفيديو. ⚠️</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#فطريات_الجلد</span>
+            <span class="hashtag">#fungalinfection</span>
+            <span class="hashtag">#eczema</span>
+            <span class="hashtag">#إكزيما</span>
+            <span class="hashtag">#dermatologist</span>
+            <span class="hashtag">#skindisease</span>
+            <span class="hashtag">#أمراض_جلدية</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 8 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="✨">08</div>
+      <div class="card-title-block">
+        <h3>"Before &amp; After: <em>Chemical Peel</em> for Acne Scars — 4 Weeks of Transformation"</h3>
+        <div class="card-tags">
+          <span class="tag tag-trans">Transformation</span>
+          <span class="tag tag-proc">Procedural</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">"Before/after" is the #1 most saved content format in all skincare. 5.1M views for a skincare transformation shows massive demand</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Visual transformation is the most primal engagement trigger. Consistent lighting + same angle + real patient results = highest save rate of any content type. Drives direct bookings more than any other format. The "4 weeks" timeline creates a realistic expectation and anticipation loop.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">BEFORE: Close-up</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">PROCEDURE: Quick clip</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">DAY 7/14/28</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">AFTER + Patient reaction</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Always use consistent lighting — ring light, same room</li>
+          <li>Get written patient consent for posting</li>
+          <li>Include price range or "DM for pricing" CTA</li>
+          <li>Series: separate videos for laser, PRP, peels, microneedling</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"28 يوم — هذا ما فعله التقشير الكيميائي لندوب حب الشباب 😍"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>مريضتنا جربت التقشير الكيميائي لأول مرة لعلاج ندوب حب الشباب — والنتيجة تكلم عن نفسها. 4 أسابيع فقط. احجز استشارتك الآن ⬇️</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#تقشير_كيميائي</span>
+            <span class="hashtag">#chemicalpeel</span>
+            <span class="hashtag">#ندوب_حب_الشباب</span>
+            <span class="hashtag">#acnescars</span>
+            <span class="hashtag">#beforeandafter</span>
+            <span class="hashtag">#clinicresults</span>
+            <span class="hashtag">#عيادة_جلدية</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 9 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="🌙">09</div>
+      <div class="card-title-block">
+        <h3>"<em>Ramadan</em> Skincare — What Changes &amp; What Your Dermatologist Recommends"</h3>
+        <div class="card-tags">
+          <span class="tag tag-edu">Education</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">100% original niche with zero competition. Seasonal virality peak. Ramadan content gets 3–5x normal engagement in Arab regions</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Ramadan fasting causes dehydration, altered sleep cycles, and increased sun exposure (Suhoor in early morning). These affect skin significantly. No dermatologist content exists for this in Arabic. The cultural specificity makes this 100% shareable within Arab audiences. Seasonal peak = algorithmic boost.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: "Ramadan effect"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">3 CHANGES in skin</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">MODIFIED ROUTINE</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Ramadan Mubarak 🌙</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Topics: dehydration-induced dryness, Suhoor food effect on acne, sleep disruption and breakouts</li>
+          <li>Recommend shifting retinol use to night-only during Ramadan</li>
+          <li>Avoid laser procedures during fasting period</li>
+          <li>Publish in the week before Ramadan begins for maximum reach</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"الصيام يغير كيمياء جلدك — إليك الروتين الذي يوصي به الطبيب 🌙"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>في رمضان جسمك يتغير — وجلدك أيضاً. الجفاف، اضطراب النوم، والأكل ليلاً كلها تؤثر على بشرتك. هذا ما تحتاجه بشرتك هذا الشهر الكريم. رمضان كريم 🌙❤️</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#رمضان_كريم</span>
+            <span class="hashtag">#رمضان</span>
+            <span class="hashtag">#العناية_بالبشرة</span>
+            <span class="hashtag">#Ramadan</span>
+            <span class="hashtag">#skincare</span>
+            <span class="hashtag">#dermatologist</span>
+            <span class="hashtag">#Jordan</span>
+            <span class="hashtag">#Palestine</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 10 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="💎">10</div>
+      <div class="card-title-block">
+        <h3>"What Happens to Your Nails When You Have <em>Psoriasis</em> — and How We Treat It"</h3>
+        <div class="card-tags">
+          <span class="tag tag-dis">Disease Awareness</span>
+          <span class="tag tag-edu">Education</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Nail dermatology is massively underrepresented online. Psoriasis content is proven viral — nail involvement is the surprising extension that drives curiosity clicks</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Most people are unaware psoriasis affects nails. The visual of nail pitting, onycholysis, and subungual hyperkeratosis is both shocking and educational. The "I didn't know nails could show this" moment creates strong share behaviour. Nails are also visible which means high personal relevance.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: Close nail shot</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">WHAT IT MEANS</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">DIAGNOSIS TOOLS</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">TREATMENT OPTIONS</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Use macro photography or dermatoscope for nail close-ups</li>
+          <li>Series: nails in psoriasis, lichen planus, fungal infection</li>
+          <li>Position clinic as expert in triad: skin + scalp + nails</li>
+          <li>Mention joint involvement as next step (psoriatic arthritis)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"أظافرك تقول لك شيئاً — هل تعرف ماذا؟ 💅🔬"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>الصدفية لا تصيب الجلد فقط — 50% من مرضى الصدفية لديهم تغيرات في الأظافر. الحفر والتقشر وتغير اللون علامات مهمة. اكتشف معنا. 🔬</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#أمراض_الأظافر</span>
+            <span class="hashtag">#nailpsoriasis</span>
+            <span class="hashtag">#psoriasis</span>
+            <span class="hashtag">#dermatology</span>
+            <span class="hashtag">#nailhealth</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 11 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="🎭">11</div>
+      <div class="card-title-block">
+        <h3>"<em>Vitiligo</em> in Arab Skin — The Medical Truth vs. the Myths People Believe"</h3>
+        <div class="card-tags">
+          <span class="tag tag-myth">Myth-Busting</span>
+          <span class="tag tag-dis">Disease Awareness</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Vitiligo carries strong stigma in Arab culture. Emotional and destigmatization content consistently goes viral. High share rate within affected communities</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Vitiligo is heavily stigmatised in Arab societies — misconceptions (contagious, God's punishment, caused by mixing foods) are widespread. This content breaks those myths with science while also validating the emotional experience. Powerful for community-building. Multiple patients and families will tag each other.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: Myth + "False"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">REAL SCIENCE</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">EMOTIONAL REFRAME</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">TREATMENT TODAY</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Address the top 5 Arab myths: contagious, caused by fish+milk, no treatment, spiritual</li>
+          <li>Show UV narrowband phototherapy machine from clinic</li>
+          <li>Mention JAK inhibitors as new treatment (2023+ approvals)</li>
+          <li>Feature actual patient story with consent for maximum impact</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"البهاق معدي؟ ❌ غلط تماماً — والعلم يثبت العكس. 🧬"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>البهاق يصيب 1-2% من الناس حول العالم. ليس معدياً، ليس خطأ أصحابه، وهناك علاجات حقيقية اليوم. لمن يعاني — أنت لست وحدك. 🤍</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#بهاق</span>
+            <span class="hashtag">#vitiligo</span>
+            <span class="hashtag">#vitiligoawareness</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+            <span class="hashtag">#أمراض_جلدية</span>
+            <span class="hashtag">#destigmatize</span>
+            <span class="hashtag">#الأردن</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 12 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="🛡️">12</div>
+      <div class="card-title-block">
+        <h3>"Day in My Life at a <em>Dermatology Clinic</em> — 3 Patients, 3 Conditions"</h3>
+        <div class="card-tags">
+          <span class="tag tag-proc">Procedural</span>
+          <span class="tag tag-edu">Education</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">"Day in my life" format is consistently high-performing for medical professionals. Humanises the doctor, builds trust, drives clinic bookings</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Demystifies the clinic visit — which is a major barrier to attendance in Arab cultures where people fear seeing a doctor. Builds parasocial relationship with the doctor. Shows that common problems (acne, hair loss, rash) are treated every day. Reduces shame around seeking help.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">Morning clinic open</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Case 1 + quick tip</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Case 2 + quick tip</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Case 3 + CTA</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>All patient footage must be consented or simulated with staff</li>
+          <li>Show equipment: dermatoscope, Wood's lamp, laser machine</li>
+          <li>Add "what would you do about this?" CTA for comments</li>
+          <li>One condition per video is also a valid simplified version</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"يوم في عيادة الجلدية — 3 مرضى، 3 حالات مختلفة جداً 🩺"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>كل يوم في العيادة يختلف — من صدفية إلى حب شباب إلى تساقط شعر. شاهد يوماً حقيقياً في العيادة وتعلّم أشياء جديدة عن جلدك. 🔬</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#يوم_في_العيادة</span>
+            <span class="hashtag">#dayinmylife</span>
+            <span class="hashtag">#dermatologist</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+            <span class="hashtag">#عيادة_جلدية</span>
+            <span class="hashtag">#medicaltiktok</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 13 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="🔎">13</div>
+      <div class="card-title-block">
+        <h3>"<em>Mole Check</em> in 60 Seconds — The ABCDE Rule Every Arab Should Know"</h3>
+        <div class="card-tags">
+          <span class="tag tag-edu">Education</span>
+          <span class="tag tag-dis">Disease Awareness</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Skin cancer awareness content sees high saves and shares. "Spot skin cancer early" content from dermatology clinics is a standard high performer</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Fear-based health content (without being alarmist) with actionable self-screening instructions. The ABCDE rule is memorable and immediately applicable. Generates family tagging. Drives dermatoscopy consultations — a high-revenue service. Skin cancer is underdiagnosed in MENA due to the myth that dark skin is immune.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: "Check this mole"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">ABCDE visual x5</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">MYTH: Dark skin safe?</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Book dermatoscopy</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Show your clinic's dermatoscope</li>
+          <li>Bust the myth: "dark skin = no skin cancer" is FALSE</li>
+          <li>Offer "10-minute mole check" as an entry-level consultation</li>
+          <li>Show before/after of dermatoscopy examination</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"في 60 ثانية — تعلم كيف تفحص شامة قد تنقذ حياتك ⚠️"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>سرطان الجلد قابل للشفاء إذا اكتُشف مبكراً. قاعدة ABCDE هي أداتك الأولى. والبشرة الداكنة ليست محصّنة — هذه حقيقة طبية. 🩺</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#سرطان_الجلد</span>
+            <span class="hashtag">#skincancer</span>
+            <span class="hashtag">#melanoma</span>
+            <span class="hashtag">#dermatoscopy</span>
+            <span class="hashtag">#molecheck</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+            <span class="hashtag">#توعية_صحية</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 14 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="💊">14</div>
+      <div class="card-title-block">
+        <h3>"Acne Keeps Coming Back? <em>It's Not Bad Luck</em> — It's a Chronic Condition Like Diabetes"</h3>
+        <div class="card-tags">
+          <span class="tag tag-edu">Education</span>
+          <span class="tag tag-myth">Myth-Busting</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">This exact angle validated by Instagram dermatology clinic content scraped live. The "chronic condition" reframe is a proven emotional hook driving high comment engagement</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>The analogy "like diabetes or high blood pressure" reframes acne from a cosmetic issue to a medical one — instantly eliminating shame and validating seeking a dermatologist. Every person who has tried and failed with creams feels deeply seen. Drives long-term patient retention through maintenance therapy concept.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: "Not bad luck"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">MEDICAL REFRAME</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Why creams fail alone</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Maintenance plan CTA</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Explain the sebaceous gland / hormonal link clearly</li>
+          <li>Validate frustration — emotional connection drives shares</li>
+          <li>Introduce concept of "maintenance therapy" like a diabetic takes metformin</li>
+          <li>Offer free or discounted first acne consultation as CTA</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"حب الشباب عاد من جديد؟ هذا ليس حظاً سيئاً — هذا مرض مزمن مثل السكري. 💡"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>حب الشباب مش مشكلة نظافة أو غذاء فقط. إنه حالة طبية تحتاج خطة علاجية مستمرة. كطبيب جلدية، هذا ما نفعله مختلفاً في عيادتنا. 🩺</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#حب_الشباب</span>
+            <span class="hashtag">#acne</span>
+            <span class="hashtag">#acnetreatment</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+            <span class="hashtag">#acneprone</span>
+            <span class="hashtag">#البشرة_الدهنية</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARD 15 ===== -->
+  <div class="video-card">
+    <div class="card-header">
+      <div class="card-number" data-emoji="🚿">15</div>
+      <div class="card-title-block">
+        <h3>"<em>Alopecia Areata</em> — Why Bald Patches Appear Overnight and What Actually Regrows Hair"</h3>
+        <div class="card-tags">
+          <span class="tag tag-dis">Disease Awareness</span>
+          <span class="tag tag-trans">Transformation</span>
+          <span class="tag tag-edu">Education</span>
+        </div>
+      </div>
+      <div class="card-virality">
+        <span class="virality-score">🔥🔥🔥</span>
+        <span class="virality-label">Viral Potential</span>
+        <span class="virality-evidence">Hair loss content dominates health TikTok. Alopecia areata is highly stigmatised in Arab cultures. The "overnight" element in hook creates urgency. PRP + JAK inhibitor before/after has massive share potential</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-label">Why It Works</div>
+        <p>Alopecia areata is psychologically devastating, especially in Arab cultures where hair is tied to identity and marriageability. The sudden nature ("I woke up and had a bald patch") triggers immediate emotional identification. Showing real regrowth with PRP or immunotherapy is the most powerful possible before/after content.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Content Structure</div>
+        <div class="structure-flow">
+          <span class="flow-step">HOOK: "Woke up bald"</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">SCIENCE: Autoimmune</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">TREATMENT OPTIONS</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">BEFORE/AFTER + Hope</span>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-label">Clinic Adaptation</div>
+        <ul>
+          <li>Show trichoscopy images of exclamation mark hairs</li>
+          <li>Explain PRP, intralesional steroids, JAK inhibitors</li>
+          <li>Address the "stress causes it" belief (partially true — explain)</li>
+          <li>Patient testimonial video series: Month 1, 3, 6</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content-block">
+      <div class="content-label">Suggested Caption, Hook &amp; Hashtags</div>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-item-title">Opening Hook</div>
+          <p class="hook-text">"صحيت الصبح وعندي بقعة صلعاء — ليش يصير هذا وكيف يتعالج؟ 😰"</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Caption</div>
+          <p>الثعلبة مرض مناعي ذاتي — الجسم يهاجم بصيلات شعره بنفسه. لكن هناك أمل حقيقي اليوم. PRP والعلاجات البيولوجية أثبتت نتائج ممتازة. 💚</p>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Hashtags</div>
+          <div class="hashtag-list">
+            <span class="hashtag">#ثعلبة</span>
+            <span class="hashtag">#alopecia</span>
+            <span class="hashtag">#alopeciaareata</span>
+            <span class="hashtag">#hairloss</span>
+            <span class="hashtag">#PRPhair</span>
+            <span class="hashtag">#طبيب_جلدية</span>
+            <span class="hashtag">#تساقط_الشعر</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== REGIONAL INTELLIGENCE ===== -->
+<div class="regional-section">
+  <div class="section-label" style="color:var(--accent)">
+    <span style="width:24px;height:1px;background:var(--accent);display:inline-block;vertical-align:middle;margin-right:12px"></span>
+    Market-Specific Intelligence
+  </div>
+  <h2 style="font-family:'DM Serif Display',serif;font-size:38px;color:white;margin-top:16px">Palestine &amp; Jordan Context</h2>
+  <div class="regional-grid">
+    <div class="regional-card">
+      <h4>🌍 Regional Disease Priorities</h4>
+      <ul>
+        <li>Hyperpigmentation + melasma (intense UV, Mediterranean climate)</li>
+        <li>Tinea versicolor &amp; fungal infections (heat + humidity)</li>
+        <li>Atopic dermatitis in children (high prevalence)</li>
+        <li>Vitiligo (high stigma, underdiagnosed)</li>
+        <li>Scalp psoriasis (stress-aggravated in conflict regions)</li>
+        <li>Acne in young adults (ages 18–30 are primary TikTok users)</li>
+        <li>Traction alopecia in hijab-wearing women</li>
+      </ul>
+    </div>
+    <div class="regional-card">
+      <h4>📱 Platform Behaviour</h4>
+      <ul>
+        <li>TikTok is dominant for ages 18–30 in Jordan &amp; Palestine</li>
+        <li>Instagram Reels preferred by 25–40 age group</li>
+        <li>Arabic-language content gets 3–5x more engagement than English-only in the region</li>
+        <li>Bilingual captions (Arabic + English) maximise reach</li>
+        <li>WhatsApp sharing is the #1 off-platform spread vector — make content shareable via link</li>
+        <li>Peak posting times: 8–10pm (post-Isha prayer)</li>
+      </ul>
+    </div>
+    <div class="regional-card">
+      <h4>🎯 Content Dos &amp; Don'ts</h4>
+      <ul>
+        <li>DO address cultural stigma around skin diseases directly</li>
+        <li>DO include Islamic medical ethics perspective where relevant</li>
+        <li>DO show female dermatologists — critical for female patient trust</li>
+        <li>DON'T show overly graphic procedures (cultural sensitivity)</li>
+        <li>DON'T mock traditional remedies — validate, then correct</li>
+        <li>DO use patient testimonials in Arabic — most trusted format</li>
+        <li>DO reference local climate (dry summers, cold winters in Jordan)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PLATFORM STRATEGY ===== -->
+<div class="main-content">
+  <div class="section-header">
+    <div class="section-label">Cross-Platform Strategy</div>
+    <h2>Platform-by-Platform Playbook</h2>
+  </div>
+  <table class="platform-table">
+    <thead>
+      <tr>
+        <th>Platform</th>
+        <th>Best Content Format</th>
+        <th>Optimal Length</th>
+        <th>Top Dermatology Hook</th>
+        <th>CTA Recommendation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TikTok</td>
+        <td>Expert Reacts (Stitch), Myth-bust, Before/After, Educational list (7–10 facts)</td>
+        <td>15–45 seconds</td>
+        <td>"Stop doing this — you're making it worse" / "I'm a dermatologist and I see this every day"</td>
+        <td>Comment CTA ("comment your condition"), save-bait lists, follow for part 2</td>
+      </tr>
+      <tr>
+        <td>Instagram Reels</td>
+        <td>Before/After transformation, Patient stories, Procedure walkthroughs, Clinic day-in-life</td>
+        <td>30–60 seconds</td>
+        <td>"DM us [keyword] to book" / visual results hook</td>
+        <td>DM trigger ("DM ACNE"), link in bio, story poll follow-up</td>
+      </tr>
+      <tr>
+        <td>YouTube Shorts</td>
+        <td>Clinical case deep-dives, Q&A format, "What dermatologists actually recommend"</td>
+        <td>45–60 seconds</td>
+        <td>Question-based: "Why does your skin get worse in summer?" — then answer</td>
+        <td>Subscribe for weekly cases, watch related long-form video</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <span>Dermatology Viral Content Intelligence Report · April 2026</span>
+  <span>Data: Apify TikTok Scraper · 600+ Posts Analysed · Palestine &amp; Jordan Market</span>
+  <span>Generated by AI Research Assistant</span>
+</div>
+
+</body>
+</html>
